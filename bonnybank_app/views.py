@@ -10,3 +10,6 @@ def index(request):
 
 def about(request):
     return render(request, 'about.html')
+
+def rooms(request):
+    return render(request, 'rooms.html')
