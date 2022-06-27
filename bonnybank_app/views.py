@@ -13,3 +13,12 @@ def about(request):
 
 def rooms(request):
     return render(request, 'rooms.html')
+
+def promotions(request):
+    return render(request, 'promotions.html')
+
+def events(request):
+    return render(request, 'events.html')
+
+def contact(request):
+    return render(request, 'contact.html')
