@@ -21,7 +21,7 @@ class Room(models.Model): # May want to include field to track which rooms are c
 
 
 class RoomImages(models.Model):
-    room = models.ForeignKey(Room, on_delete=models.CASCADE)
+    room = models.ForeignKey(Room, on_delete=models.SET_NULL, blank=True, null=True)
     image = models.ImageField(upload_to='static/images/room')
 
 
