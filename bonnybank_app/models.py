@@ -8,7 +8,7 @@ class Review(models.Model):
     quote = models.TextField(max_length=500) #Temporary value and change later for the card size    
 
     def __str__(self):
-        return self.title
+        return self.name
 
 class Room(models.Model): # May want to include field to track which rooms are currently booked/available
     title = models.CharField(max_length=200)
