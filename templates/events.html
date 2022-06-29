@@ -23,15 +23,13 @@
   <!-- Navbar -->
   <div data-w-id="cc0d3922-48bd-92ac-72ae-4124e12e41c1" data-animation="default" data-collapse="medium" data-duration="400" data-easing="ease" data-easing2="ease" role="banner" class="altnav-2 w-nav">
     <div class="container-9 w-container">
-      <a href="{% url 'index.html' %}" class="mobile-logo w-nav-brand"><img src="{% static 'images/Bonnybank-logo-black.png' %}" loading="eager" height="150" width="150" alt="" class="navlogo"></a>
-      <nav role="{% url 'navigation' %}" class="nav-menu-2 w-nav-menu">
-        <a href="{% url 'index.html' %}" class="altnavlink w-nav-link">Home</a>
-        <a href="{% url 'rooms.html' %}" class="altnavlink w-nav-link">Rooms</a>
-        <a href="{% url 'about.html' %}" class="altnavlink w-nav-link">About</a>
-        <a href="{% url 'index.html' %}" class="desktop-logo w-nav-brand"><img src="{% static 'images/Bonnybank-logo-black.png' %}" loading="eager" height="150" width="150" alt="" class="navlogo"></a>
-        <a href="{% url 'promotions.html' %}" class="altnavlink w-nav-link">Promotions</a>
-        <a href="{% url 'events.html' %}" aria-current="page" class="altnavlink w-nav-link w--current">Events</a>
-        <a href="{% url 'contact.html' %}" class="altnavlink w-nav-link">Contact</a>
+      <a href="{% url 'index' %}" class="altnavlink w-nav-link">Home</a>
+        <a href="{% url 'rooms' %}" class="altnavlink w-nav-link">Rooms</a>
+        <a href="{% url 'about' %}" class="altnavlink w-nav-link">About</a>
+        <a href="{% url 'index' %}" class="desktop-logo w-nav-brand"><img src="{% static 'images/Bonnybank-logo-black.png' %}" loading="eager" height="150" width="150" alt="" class="navlogo"></a>
+        <a href="{% url 'promotions' %}" class="altnavlink w-nav-link">Promotions</a>
+        <a href="{% url 'events' %}" aria-current="page" class="altnavlink w-nav-link w--current">Events</a>
+        <a href="{% url 'contact' %}" class="altnavlink w-nav-link">Contact</a>
       </nav>
       <div class="menu-button w-nav-button">
         <div class="icon-4 w-icon-nav-menu"></div>
