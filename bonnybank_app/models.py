@@ -37,6 +37,7 @@ class Event(models.Model):
     end = models.DateTimeField(blank=True, null=True)
     display_image = models.ImageField(upload_to='static/images/event')
     body = models.TextField(max_length=500)
+    id = models.UUIDField(default=uuid.uuid4, unique=True, primary_key=True, editable=False)
 
     def __str__(self):
         return self.title

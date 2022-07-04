@@ -23,6 +23,9 @@ def promotions(request):
 def events(request):
     return render(request, 'events.html')
 
+def event_details(request, pk):
+    return render(request, 'event_details')
+
 def contact(request):
     return render(request, 'contact.html')
 
