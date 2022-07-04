@@ -1,10 +1,8 @@
-from . models import Review
+from . models import Review, News
 from django.shortcuts import render, redirect
 from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 from django.db.models import Q
 from django.contrib import messages
-from django.contrib.auth.models import User
-from django.contrib.auth import login, authenticate, logout
 
 def index(request):
     review = Review.objects.all()
@@ -29,5 +27,22 @@ def event_details(request, pk):
 def contact(request):
     return render(request, 'contact.html')
 
-def news (request): 
-    return render (request, 'news.html' )
+def news (request):
+    media = News.objects.order_by('-date').all()
+
+    page = request.GET.get('page')
+    results = 6
+    paginator = Paginator(media, results)
+
+    try:
+        media = paginator.page(page)
+    except PageNotAnInteger:
+        page = 1
+        media = paginator.page(page)
+    except EmptyPage:
+        page = paginator.num_pages
+        media = paginator.page(page)
+
+    
+    context = {'media': media, 'paginator': paginator}
+    return render (request, 'news.html', context)
