@@ -66,9 +66,17 @@ class Promotions(models.Model):
         verbose_name_plural = "Promotions"
 
 class Contact(models.Model):
+
+    ROOM_CHOICES = (
+        ('night owl', 'Night Owl'),
+        ('escarpment', 'Escarpment'),
+        ('red squirrel', 'Red Squirrel'),
+    )
+
+
     name = models.CharField(max_length=100)
     email  = models.EmailField(max_length=200)
-    room = models.ForeignKey(Room, on_delete=models.SET_NULL, blank=True, null=True)
+    room = models.CharField(max_length=12, choices=ROOM_CHOICES, blank=True, null=True)
     checkin = models.DateTimeField(blank=True, null=True)
     checkout = models.DateTimeField(blank=True, null=True)
     message = models.TextField(max_length=200, blank=True, null=True)
