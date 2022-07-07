@@ -65,152 +65,42 @@
       </div>
     </div>
   </div><img src="{% static 'images/Vines-2.png' %}" loading="lazy" width="564" alt="" class="image-26"><img src="{% static 'images/Vines-2.png' %}" loading="lazy" width="564" alt="" class="image-21">
-  <div class="reviews wf-section">
-    <div class="page-padding section">
-      <div class="container-large">
-        <div class="padding-vertical padding-medium">
-          <div class="carousel-components">
-            <div class="carousel_arrow-3">
-              <div data-w-id="44cc4602-281e-7787-7c12-fe740f664419" class="crsl-button l-1">&lt;</div>
-              <div data-w-id="44cc4602-281e-7787-7c12-fe740f66441b" class="crsl-button l-2">&lt;</div>
-              <div data-w-id="44cc4602-281e-7787-7c12-fe740f66441d" class="crsl-button l-3">&lt;</div>
-              <div data-w-id="44cc4602-281e-7787-7c12-fe740f66441f" class="crsl-button l-4">&lt;</div>
-              <div data-w-id="44cc4602-281e-7787-7c12-fe740f664421" class="crsl-button l-5">&lt;</div>
-              <div data-w-id="44cc4602-281e-7787-7c12-fe740f664423" class="crsl-button l-6">&lt;</div>
-              <div data-w-id="44cc4602-281e-7787-7c12-fe740f664425" class="crsl-l-last-2">&lt;</div>
+  
+  <!-- reviews section -->
+  <div class="body-section-2 reviews wf-section">
+    <div data-delay="4000" data-animation="slide" class="slider-9 w-slider" data-autoplay="false" data-easing="ease" data-hide-arrows="false" data-disable-swipe="false" data-autoplay-limit="0" data-nav-spacing="3" data-duration="500" data-infinite="true">
+
+      <div class="w-slider-mask">
+        {% for entry in review %}
+        <div class="w-slide">
+          <div class="container-20 w-container">
+            <div class="div-block-63">
+              <h1 class="heading-23"><strong><em class="italic-text-7">{{entry.name}}</em></strong></h1>
+              <div class="text-block-34">{{entry.country}}</div>
             </div>
-            <div class="carousel_mask-2">
-              <div class="carousel_slide-wrapper">
-                <div class="slide_5">
-                  <div class="slide_c-5-3">
-                    <div class="review-info">
-                      <h1 class="review-text-2">Guest Name</h1>
-                      <div class="review-sub-text-2">This is s&quot; You will be hard pressed to find a more interesting B&amp;B. The house has its own story, and it is located right next to an owl preserve. &quot;ome text inside of a div block.</div>
-                      <div class="text-block-14"><strong class="bold-text-5">05/14/2010</strong></div>
-                      <div class="text-block-14">Country</div>
-                    </div>
-                  </div>
-                </div>
-                <div class="slide_6">
-                  <div class="slide_c-6-3">
-                    <div class="review-info">
-                      <h1 class="review-text-2">Guest Name</h1>
-                      <div class="review-sub-text-2">This is s&quot; You will be hard pressed to find a more interesting B&amp;B. The house has its own story, and it is located right next to an owl preserve. &quot;ome text inside of a div block.</div>
-                      <div class="text-block-14"><strong class="bold-text-5">05/14/2010</strong></div>
-                      <div class="text-block-14">Country</div>
-                    </div>
-                  </div>
-                </div>
-                <div class="slide_1">
-                  <div class="slide_c-1-3">
-                    <div class="review-info">
-                      <h1 class="review-text-2">Guest Name</h1>
-                      <div class="review-sub-text-2">This is s&quot; You will be hard pressed to find a more interesting B&amp;B. The house has its own story, and it is located right next to an owl preserve. &quot;ome text inside of a div block.</div>
-                      <div class="text-block-14"><strong class="bold-text-5">05/14/2010</strong></div>
-                      <div class="text-block-14">Country</div>
-                    </div>
-                  </div>
-                </div>
-                <div class="slide_2">
-                  <div class="slide_c-2-3">
-                    <div class="review-info">
-                      <h1 class="review-text-2">Guest Name</h1>
-                      <div class="review-sub-text-2">This is s&quot; You will be hard pressed to find a more interesting B&amp;B. The house has its own story, and it is located right next to an owl preserve. &quot;ome text inside of a div block.</div>
-                      <div class="text-block-14"><strong class="bold-text-5">05/14/2010</strong></div>
-                      <div class="text-block-14">Country</div>
-                    </div>
-                  </div>
-                </div>
-                <div class="slide_3">
-                  <div class="slide_c-3-3">
-                    <div class="review-info">
-                      <h1 class="review-text-2">Guest Name</h1>
-                      <div class="review-sub-text-2">This is s&quot; You will be hard pressed to find a more interesting B&amp;B. The house has its own story, and it is located right next to an owl preserve. &quot;ome text inside of a div block.</div>
-                      <div class="text-block-14"><strong class="bold-text-5">05/14/2010</strong></div>
-                      <div class="text-block-14">Country</div>
-                    </div>
-                  </div>
-                </div>
-                <div class="slide_4">
-                  <div class="slide_c-4-3">
-                    <div class="review-info">
-                      <h1 class="review-text-2">Guest Name</h1>
-                      <div class="review-sub-text-2">This is s&quot; You will be hard pressed to find a more interesting B&amp;B. The house has its own story, and it is located right next to an owl preserve. &quot;ome text inside of a div block.</div>
-                      <div class="text-block-14"><strong class="bold-text-5">05/14/2010</strong></div>
-                      <div class="text-block-14">Country</div>
-                    </div>
-                  </div>
-                </div>
-                <div class="slide_5">
-                  <div class="slide_c-5-3">
-                    <div class="review-info">
-                      <h1 class="review-text-2">Guest Name</h1>
-                      <div class="review-sub-text-2">This is s&quot; You will be hard pressed to find a more interesting B&amp;B. The house has its own story, and it is located right next to an owl preserve. &quot;ome text inside of a div block.</div>
-                      <div class="text-block-14"><strong class="bold-text-5">05/14/2010</strong></div>
-                      <div class="text-block-14">Country</div>
-                    </div>
-                  </div>
-                </div>
-                <div class="slide_6">
-                  <div class="slide_c-6-3">
-                    <div class="review-info">
-                      <h1 class="review-text-2">Guest Name</h1>
-                      <div class="review-sub-text-2">This is s&quot; You will be hard pressed to find a more interesting B&amp;B. The house has its own story, and it is located right next to an owl preserve. &quot;ome text inside of a div block.</div>
-                      <div class="text-block-14"><strong class="bold-text-5">05/14/2010</strong></div>
-                      <div class="text-block-14">Country</div>
-                    </div>
-                  </div>
-                </div>
-                <div class="slide_1">
-                  <div class="slide_c-1-3">
-                    <div class="review-info">
-                      <h1 class="review-text-2">Guest Name</h1>
-                      <div class="review-sub-text-2">This is s&quot; You will be hard pressed to find a more interesting B&amp;B. The house has its own story, and it is located right next to an owl preserve. &quot;ome text inside of a div block.</div>
-                      <div class="text-block-14"><strong class="bold-text-5">05/14/2010</strong></div>
-                      <div class="text-block-14">Country</div>
-                    </div>
-                  </div>
-                </div>
-                <div class="slide_2">
-                  <div class="slide_c-2-3">
-                    <div class="review-info">
-                      <h1 class="review-text-2">Guest Name</h1>
-                      <div class="review-sub-text-2">This is s&quot; You will be hard pressed to find a more interesting B&amp;B. The house has its own story, and it is located right next to an owl preserve. &quot;ome text inside of a div block.</div>
-                      <div class="text-block-14"><strong class="bold-text-5">05/14/2010</strong></div>
-                      <div class="text-block-14">Country</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="carousel_arrow-3 two">
-              <div data-w-id="44cc4602-281e-7787-7c12-fe740f6644a2" class="crsl-button r-1">&gt;</div>
-              <div data-w-id="44cc4602-281e-7787-7c12-fe740f6644a4" class="crsl-button r-2">&gt;</div>
-              <div data-w-id="44cc4602-281e-7787-7c12-fe740f6644a6" class="crsl-button r-3">&gt;</div>
-              <div data-w-id="44cc4602-281e-7787-7c12-fe740f6644a8" class="crsl-button r-4">&gt;</div>
-              <div data-w-id="44cc4602-281e-7787-7c12-fe740f6644aa" class="crsl-button r-5">&gt;</div>
-              <div data-w-id="44cc4602-281e-7787-7c12-fe740f6644ac" class="crsl-button r-6">&gt;</div>
-              <div data-w-id="44cc4602-281e-7787-7c12-fe740f6644ae" class="crsl-r-first-2">&gt;</div>
-            </div>
-            <div class="carousel_list-mask">
-              <div class="carousel_list-wrapper-3">
-                <h3 class="list-5">Milky Puff</h3>
-                <h3 class="list-6">Cookie Camp</h3>
-                <h3 class="list-1">Golden Toast</h3>
-                <h3 class="list-2">Matcha Lava</h3>
-                <h3 class="list-3">The Harvest</h3>
-                <h3 class="list-4">Chocolate Forest</h3>
-                <h3 class="list-5">Milky Puff</h3>
-                <h3 class="list-6">Cookie Camp</h3>
-                <h3 class="list-1">Golden Toast</h3>
-                <h3 class="list-2">Matcha Lava</h3>
-              </div>
-            </div>
+            <div class="text-block-33"><strong><em class="italic-text-5">{{entry.date}}</em></strong></div>
+            <div class="text-block-32">“{{entry.quote}}”</div>
           </div>
         </div>
+        {% endfor %}
       </div>
+
+      <div class="left-arrow-9 w-slider-arrow-left">
+        <div class="button alt">
+          <div class="icon-10 w-icon-slider-left"></div>
+        </div>
+      </div>
+      <div class="right-arrow-9 w-slider-arrow-right">
+        <div class="button alt">
+          <div class="icon-9 w-icon-slider-right"></div>
+        </div>
+      </div>
+      <div class="slide-nav-5 w-slider-nav w-round"></div>
     </div>
-  </div><img src="{% static 'images/Vines-3.png' %}" loading="lazy" alt="" class="image-22">
+  </div>
+  
+  <!-- bottom area -->
+  <img src="{% static 'images/Vines-3.png' %}" loading="lazy" alt="" class="image-22">
   <div class="body-section about-us-section wf-section">
     <div class="container-6 w-container">
       <div class="div-block-12"><img src="{% static 'images/redSquirrel.png' %}" loading="lazy" width="297" id="w-node-_479996e1-b0a3-2d62-9995-0ecde4956d0f-76551a12" alt="" class="image-27">

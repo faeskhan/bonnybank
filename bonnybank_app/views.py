@@ -10,7 +10,9 @@ def index(request):
     return render(request, 'index.html', context)
 
 def about(request):
-    return render(request, 'about.html')
+    review = Review.objects.all()
+    context = {'review': review}
+    return render(request, 'about.html', context)
 
 def rooms(request):
     return render(request, 'rooms.html')
