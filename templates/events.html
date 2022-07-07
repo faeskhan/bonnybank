@@ -28,48 +28,25 @@
   </div>
   <div class="event-section wf-section">
     <div class="div-block-36">
+
+      {% for event in function %}
       <div id="w-node-c9d04a04-f62e-2645-7988-d53f6da12465-604d6267" class="event-card">
         <div class="div-block-35"><img src="{% static 'images/Bonny-bank-elements-3.png' %}" loading="lazy" width="325" srcset="{% static 'images/Bonny-bank-elements-3-p-500.png' %} 500w, {% static 'images/Bonny-bank-elements-3-p-800.png' %} 800w, {% static 'images/Bonny-bank-elements-3-p-1080.png' %} 1080w, {% static 'images/Bonny-bank-elements-3-p-1600.png' %} 1600w, {% static 'images/Bonny-bank-elements-3-p-2000.png' %} 2000w, {% static 'images/Bonny-bank-elements-3-p-2600.png' %} 2600w, {% static 'images/Bonny-bank-elements-3-p-3200.png' %} 3200w, {% static 'images/Bonny-bank-elements-3.png' %} 4556w" sizes="(max-width: 479px) 100vw, (max-width: 767px) 32vw, 20vw" alt="" class="image-50">
-          <h1 class="heading-14 event-date">July 1st</h1>
+          <h1 class="heading-14 event-date" style="font-size: 20px; justify-content: left;">{{event.start}}</h1>
         </div>
-        <div class="event-information"><img src="{% static 'images/tempOwl.jpg' %}" loading="lazy" width="475" id="w-node-c9d04a04-f62e-2645-7988-d53f6da1246a-604d6267" alt="" class="event-image">
+        <div class="event-information"><img src="{{event.display_image.url}}" loading="lazy" width="475" id="w-node-c9d04a04-f62e-2645-7988-d53f6da1246a-604d6267" alt="" class="event-image">
           <div class="div-block-37">
-            <h1 id="w-node-c9d04a04-f62e-2645-7988-d53f6da1246b-604d6267" class="event-name">Heading</h1>
+            <h1 id="w-node-c9d04a04-f62e-2645-7988-d53f6da1246b-604d6267" class="event-name">{{event.title}}</h1>
             <div class="location"><img src="{% static 'images/locatio-2.png' %}" loading="lazy" width="46" alt="">
-              <div>This is some text inside of a div block.</div>
+              <div>{{event.body}}</div>
             </div>
-            <a href="event-details.html" class="button w-button">Learn More</a>
+            <a href="{% url 'event_details' event.id %}" class="button w-button">Learn More</a>
+            {{event.id}}
           </div>
         </div>
       </div>
-      <div id="w-node-_87dfdb34-d495-9430-f176-c7255749d7ab-604d6267" class="event-card">
-        <div class="div-block-35"><img src="{% static 'images/Bonny-bank-elements-3.png' %}" loading="lazy" width="325" srcset="{% static 'images/Bonny-bank-elements-3-p-500.png' %} 500w, {% static 'images/Bonny-bank-elements-3-p-800.png' %} 800w, {% static 'images/Bonny-bank-elements-3-p-1080.png' %} 1080w, {% static 'images/Bonny-bank-elements-3-p-1600.png' %} 1600w, {% static 'images/Bonny-bank-elements-3-p-2000.png' %} 2000w, {% static 'images/Bonny-bank-elements-3-p-2600.png' %} 2600w, {% static 'images/Bonny-bank-elements-3-p-3200.png' %} 3200w, {% static 'images/Bonny-bank-elements-3.png' %} 4556w" sizes="(max-width: 479px) 100vw, (max-width: 767px) 32vw, 20vw" alt="" class="image-50">
-          <h1 class="heading-14 event-date">July 1st</h1>
-        </div>
-        <div class="event-information"><img src="{% static 'images/tempOwl.jpg' %}" loading="lazy" width="475" id="w-node-_87dfdb34-d495-9430-f176-c7255749d7b1-604d6267" alt="" class="event-image">
-          <div class="div-block-37">
-            <h1 id="w-node-_87dfdb34-d495-9430-f176-c7255749d7b3-604d6267" class="event-name">Heading</h1>
-            <div class="location"><img src="{% static 'images/locatio-2.png' %}" loading="lazy" width="46" alt="">
-              <div>This is some text inside of a div block.</div>
-            </div>
-            <a href="event-details.html" class="button w-button">Learn More</a>
-          </div>
-        </div>
-      </div>
-      <div id="w-node-_55a1432e-4eea-8821-257a-31913f59b0dc-604d6267" class="event-card">
-        <div class="div-block-35"><img src="{% static 'images/Bonny-bank-elements-3.png' %}" loading="lazy" width="325" srcset="{% static 'images/Bonny-bank-elements-3-p-500.png' %} 500w, {% static 'images/Bonny-bank-elements-3-p-800.png' %} 800w, {% static 'images/Bonny-bank-elements-3-p-1080.png' %} 1080w, {% static 'images/Bonny-bank-elements-3-p-1600.png' %} 1600w, {% static 'images/Bonny-bank-elements-3-p-2000.png' %} 2000w, {% static 'images/Bonny-bank-elements-3-p-2600.png' %} 2600w, {% static 'images/Bonny-bank-elements-3-p-3200.png' %} 3200w, {% static 'images/Bonny-bank-elements-3.png' %} 4556w" sizes="(max-width: 479px) 100vw, (max-width: 767px) 32vw, 20vw" alt="" class="image-50">
-          <h1 class="heading-14 event-date">July 1st</h1>
-        </div>
-        <div class="event-information"><img src="{% static 'images/tempOwl.jpg' %}" loading="lazy" width="475" id="w-node-_55a1432e-4eea-8821-257a-31913f59b0e2-604d6267" alt="" class="event-image">
-          <div class="div-block-37">
-            <h1 id="w-node-_55a1432e-4eea-8821-257a-31913f59b0e4-604d6267" class="event-name">Heading</h1>
-            <div class="location"><img src="{% static 'images/locatio-2.png' %}" loading="lazy" width="46" alt="">
-              <div>This is some text inside of a div block.</div>
-            </div>
-            <a href="event-details.html" class="button w-button">Learn More</a>
-          </div>
-        </div>
-      </div>
+      {% endfor %}
+
     </div>
   </div><img src="{% static 'images/Vines-2.png' %}" loading="lazy" alt="" class="image-51"><img src="{% static 'images/Vines-4.png' %}" loading="lazy" alt="" class="image-52">
   
