@@ -31,7 +31,7 @@ def news (request):
     media = News.objects.order_by('-date').all()
 
     page = request.GET.get('page')
-    results = 6
+    results = 1
     paginator = Paginator(media, results)
 
     try:
