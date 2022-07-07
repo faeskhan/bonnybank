@@ -33,6 +33,7 @@ class RoomImages(models.Model):
 
 class Event(models.Model):
     title = models.CharField(max_length=200)
+    location = models.CharField(max_length=200, null=True, blank=True)
     start = models.DateTimeField(blank=True, null=True)
     end = models.DateTimeField(blank=True, null=True)
     display_image = models.ImageField(upload_to='static/images/event')

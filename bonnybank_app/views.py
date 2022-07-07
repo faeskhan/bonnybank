@@ -26,7 +26,7 @@ def events(request):
 def event_details(request, pk):
     event = Event.objects.get(id=pk)
     context = {'event': event}
-    return render(request, 'event_details', context)
+    return render(request, 'event_details.html', context)
 
 def contact(request):
     return render(request, 'contact.html')
@@ -35,7 +35,7 @@ def news (request):
     media = News.objects.order_by('-date').all()
 
     page = request.GET.get('page')
-    results = 1
+    results = 6
     paginator = Paginator(media, results)
 
     try:
