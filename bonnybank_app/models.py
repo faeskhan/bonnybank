@@ -34,11 +34,12 @@ class RoomImages(models.Model):
 class Event(models.Model):
     title = models.CharField(max_length=200)
     location = models.CharField(max_length=200, null=True, blank=True)
-    start = models.DateTimeField(blank=True, null=True)
-    end = models.DateTimeField(blank=True, null=True)
+    start = models.DateField(blank=True, null=True)
+    end = models.DateField(blank=True, null=True)
     display_image = models.ImageField(upload_to='static/images/event')
     body = models.TextField(max_length=500)
     id = models.UUIDField(default=uuid.uuid4, unique=True, primary_key=True, editable=False)
+    
 
     def __str__(self):
         return self.title
@@ -47,7 +48,7 @@ class News(models.Model):
     title = models.CharField(max_length=200)
     url = models.URLField(max_length=600)
     source = models.CharField(max_length=200, blank=True, null=True)
-    date = models.DateTimeField(blank=True, null=True)
+    date = models.DateField(blank=True, null=True)
     display_image = models.ImageField(upload_to='static/images/news')
 
     def __str__(self):

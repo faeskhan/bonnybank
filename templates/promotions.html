@@ -18,37 +18,45 @@
   <link href="{% static 'images/favicon.ico' %}" rel="shortcut icon" type="image/x-icon">
   <link href="{% static 'images/webclip.png' %}" rel="apple-touch-icon">
 </head>
-<body class="body-5">
+<body class="body-new">
 
   {% include 'navbar.html' %}
 
   <div class="hero wf-section">
-    <h1 class="heading-20">Promotions</h1>
+    <h1 class="heading-16">Promotions</h1>
   </div>
   <div class="promotions wf-section">
-    <div data-w-id="0c886d10-3601-7051-8627-9d6e4952505c" style="opacity:0" class="div-block-52">
-      <div class="promotionbanner">
-        <h1 class="promotiontitle">Promotion One</h1>
-        <div class="rich-text-block w-richtext">
-          <p>The rich text element allows you to create and format headings, paragraphs, blockquotes, images, and video all in one place instead of having to add and format them individually. Just double-click and easily create content.</p>
-          <p>The rich text element allows you to create and format headings, paragraphs, blockquotes, images, and video all in one place instead of having to add and format them individually. Just double-click and easily create content.</p>
-          <p> individually. Just double-click and easily create content.</p>
-          <p>The rich text element allows you to create and format headings, paragraphs, blockquotes, images, and video all in one place instead of having to add and format them individually. Just double-click and easily create content.</p>
-          <p>‍</p>
+
+    {% for entry in promotion %}
+      {{ forloop.counter }}
+
+      {% if forloop.counter == 1 %}
+        <!-- for the odd number ones -->
+        <div data-w-id="0c886d10-3601-7051-8627-9d6e4952505c" style="opacity:0" class="div-block-52">
+          <div class="promotionbanner">
+            <h1 class="promotiontitle">{{entry.title}}</h1>
+            <div class="rich-text-block w-richtext">
+              {{entry.body}}
+            </div>
+          </div><img src="{% static 'images/1-19.png' %}" loading="lazy" srcset="{% static 'images/1-19-p-500.png' %} 500w, {% static 'images/1-19-p-800.png' %} 800w, {% static 'images/1-19.png' %} 1080w" sizes="(max-width: 767px) 100vw, 20vw" alt="" class="triangleimg">
         </div>
-      </div><img src="{% static 'images/1-19.png' %}" loading="lazy" srcset="{% static 'images/1-19-p-500.png' %} 500w, {% static 'images/1-19-p-800.png' %} 800w, {% static 'images/1-19.png' %} 1080w" sizes="(max-width: 767px) 100vw, 20vw" alt="" class="triangleimg">
-    </div>
-    <div data-w-id="57a2b19d-f4e2-2545-d578-3ea82588f1e2" style="opacity:0" class="div-block-52"><img src="{% static 'images/1-19.png' %}" loading="lazy" srcset="{% static 'images/1-19-p-500.png' %} 500w, {% static 'images/1-19-p-800.png' %} 800w, {% static 'images/1-19.png' %} 1080w" sizes="(max-width: 767px) 100vw, 20vw" alt="" class="triangleimg right">
-      <div class="promotionbanner-copy">
-        <h1 class="promotiontitle-copy">Promotion Two</h1>
-        <div class="rich-text-block-2 w-richtext">
-          <p>Headings, paragraphs, blockquotes, figures, images, and figure captions can all be styled after a class is added to the rich text element using the &quot;When inside of&quot; nested selector system.</p>
-          <p>The rich text element allows you to create and format headings, paragraphs, blockquotes, images, and video all in one place instead of having to add and format them individually. Just double-click and easily create content.</p>
-          <p>The rich text element allows you to create and format headings, paragraphs, blockquotes, images, and video all in one place instead of having to add and format them individually. Just double-click and easily create content.</p>
-          <p>‍</p>
+      {% endif %}
+
+      {% if forloop.counter == 2 %}
+        <!-- for the even number ones -->
+        <div data-w-id="57a2b19d-f4e2-2545-d578-3ea82588f1e2" style="opacity:0" class="div-block-52"><img src="{% static 'images/1-19.png' %}" loading="lazy" srcset="{% static 'images/1-19-p-500.png' %} 500w, {% static 'images/1-19-p-800.png' %} 800w, {% static 'images/1-19.png' %} 1080w" sizes="(max-width: 767px) 100vw, 20vw" alt="" class="triangleimg right">
+          <div class="promotionbanner-copy">
+            <h1 class="promotiontitle-copy">{{entry.title}}</h1>
+            <div class="rich-text-block-2 w-richtext">
+              {{entry.body}}
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
+      {% endif %}
+
+    {% endfor %}
+
+
   </div>
   
   {% include 'footer.html' %}

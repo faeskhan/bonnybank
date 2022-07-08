@@ -1,4 +1,4 @@
-from . models import Review, News, Event
+from . models import Review, News, Event, Promotions
 from django.shortcuts import render, redirect
 from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 from django.db.models import Q
@@ -18,7 +18,9 @@ def rooms(request):
     return render(request, 'rooms.html')
 
 def promotions(request):
-    return render(request, 'promotions.html')
+    promotion = Promotions.objects.all()
+    context = {'promotion': promotion}
+    return render(request, 'promotions.html', context)
 
 def events(request):
     function = Event.objects.order_by('-end').all()
