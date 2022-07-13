@@ -10,26 +10,26 @@ class Review(models.Model):
     def __str__(self):
         return self.name
 
-class Room(models.Model): # May want to include field to track which rooms are currently booked/available
-    title = models.CharField(max_length=200)
-    price = models.DecimalField(max_digits=6, decimal_places=2) #Essentially must be greater than 0
-    decription = models.TextField(max_length=2000)
-    id = models.UUIDField(default=uuid.uuid4, unique=True, primary_key=True, editable=False)
+# class Room(models.Model): # May want to include field to track which rooms are currently booked/available
+#     title = models.CharField(max_length=200)
+#     price = models.DecimalField(max_digits=6, decimal_places=2) #Essentially must be greater than 0
+#     decription = models.TextField(max_length=2000)
+#     id = models.UUIDField(default=uuid.uuid4, unique=True, primary_key=True, editable=False)
 
-    def __str__(self):
-        return self.title
-
-
-class RoomImages(models.Model):
-    room = models.ForeignKey(Room, on_delete=models.SET_NULL, blank=True, null=True)
-    image = models.ImageField(upload_to='static/images/room')
+#     def __str__(self):
+#         return self.title
 
 
-    def __str__(self):
-        return self.title
+# class RoomImages(models.Model):
+#     room = models.ForeignKey(Room, on_delete=models.SET_NULL, blank=True, null=True)
+#     image = models.ImageField(upload_to='static/images/room')
 
-    class Meta:
-        verbose_name_plural = "RoomImages"
+
+#     def __str__(self):
+#         return self.title
+
+#     class Meta:
+#         verbose_name_plural = "RoomImages"
 
 class Event(models.Model):
     title = models.CharField(max_length=200)

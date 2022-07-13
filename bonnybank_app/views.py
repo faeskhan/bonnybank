@@ -37,6 +37,7 @@ def event_details(request, pk):
 def contact(request):
 
     if request.method == 'POST':
+        # Retrieving the form's information
         first_name = request.POST['first_name']
         last_name = request.POST['last_name']
         email = request.POST['email']
@@ -47,17 +48,16 @@ def contact(request):
         nights = request.POST['of-Nights']
         message = request.POST['Message']
 
-        # send_mail(subject, message, from_email, recipient_list)
+        # intialize the variables for email and backend
         checkin = month +' '+ day +', '+ year
         checkout = nights + ' nights after checkin date'
 
         if radio_button == 'Booking':
-            
             contact_obj = Contact(first_name = first_name, last_name=last_name, email=email, checkin=checkin, checkout=checkout, message=message)
-            contact_obj.save()
+            contact_obj.save() 
 
         subject = first_name + ' ' + last_name + ': ' + radio_button
-        message = 'Check-In: ' + checkin + '\n' + 'Check-Out: ' + checkout + '\n' + message
+        message = 'Check-In: ' + checkin + '\n' + 'Check-Out: ' + checkout + '\n' + 'Their Message: '+ '\n'  + message
 
         send_mail( 
             subject,
@@ -66,17 +66,7 @@ def contact(request):
             [settings.EMAIL_HOST_USER], 
             fail_silently=False,
             )
-        
-        # print(checkin)
-        # print(first_name)
-        # print(last_name)
-        # print(email)
-        # print(radio_button)
-        # print(day)
-        # print(month) 
-        # print(year)
-        # print(nights)
-        # print(message)
+
         return redirect('index')
 
 
