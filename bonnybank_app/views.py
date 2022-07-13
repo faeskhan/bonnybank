@@ -4,6 +4,7 @@ from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 from django.db.models import Q
 from django.contrib import messages
 from django.core.mail import send_mail
+from django.conf import settings
 
 def index(request):
     review = Review.objects.all()
@@ -47,13 +48,24 @@ def contact(request):
         message = request.POST['Message']
 
         # send_mail(subject, message, from_email, recipient_list)
+        checkin = month +' '+ day +', '+ year
+        checkout = nights + ' nights after checkin date'
 
         if radio_button == 'Booking':
-            checkin = month +' '+ day +', '+ year
-            checkout = nights + ' nights after checkin date'
+            
             contact_obj = Contact(first_name = first_name, last_name=last_name, email=email, checkin=checkin, checkout=checkout, message=message)
             contact_obj.save()
 
+        subject = first_name + ' ' + last_name + ': ' + radio_button
+        message = 'Check-In: ' + checkin + '\n' + 'Check-Out: ' + checkout + '\n' + message
+
+        send_mail( 
+            subject,
+            message,
+            email, 
+            [settings.EMAIL_HOST_USER], 
+            fail_silently=False,
+            )
         
         # print(checkin)
         # print(first_name)
