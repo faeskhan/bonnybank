@@ -61,6 +61,7 @@ class Promotions(models.Model):
     title = models.CharField(max_length=200)
     body = models.TextField(max_length=500)
 
+
     def __str__(self):
         return self.title
 
@@ -76,7 +77,8 @@ class Contact(models.Model):
     )
 
 
-    name = models.CharField(max_length=100)
+    first_name = models.CharField(max_length=100)
+    last_name = models.CharField(max_length=100)
     email  = models.EmailField(max_length=200)
     room = models.CharField(max_length=12, choices=ROOM_CHOICES, blank=True, null=True)
     checkin = models.DateTimeField(blank=True, null=True)

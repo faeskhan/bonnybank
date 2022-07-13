@@ -28,21 +28,10 @@
   <div class="promotions wf-section">
 
     {% for entry in promotion %}
-      {{ forloop.counter }}
 
-      {% if forloop.counter == 1 %}
-        <!-- for the odd number ones -->
-        <div data-w-id="0c886d10-3601-7051-8627-9d6e4952505c" style="opacity:0" class="div-block-52">
-          <div class="promotionbanner">
-            <h1 class="promotiontitle">{{entry.title}}</h1>
-            <div class="rich-text-block w-richtext">
-              {{entry.body}}
-            </div>
-          </div><img src="{% static 'images/1-19.png' %}" loading="lazy" srcset="{% static 'images/1-19-p-500.png' %} 500w, {% static 'images/1-19-p-800.png' %} 800w, {% static 'images/1-19.png' %} 1080w" sizes="(max-width: 767px) 100vw, 20vw" alt="" class="triangleimg">
-        </div>
-      {% endif %}
+      
 
-      {% if forloop.counter == 2 %}
+      {% if forloop.counter|divisibleby:2 %}
         <!-- for the even number ones -->
         <div data-w-id="57a2b19d-f4e2-2545-d578-3ea82588f1e2" style="opacity:0" class="div-block-52"><img src="{% static 'images/1-19.png' %}" loading="lazy" srcset="{% static 'images/1-19-p-500.png' %} 500w, {% static 'images/1-19-p-800.png' %} 800w, {% static 'images/1-19.png' %} 1080w" sizes="(max-width: 767px) 100vw, 20vw" alt="" class="triangleimg right">
           <div class="promotionbanner-copy">
@@ -51,6 +40,17 @@
               {{entry.body}}
             </div>
           </div>
+        </div>
+
+      {% else %}
+        <!-- for the odd number ones -->
+        <div data-w-id="0c886d10-3601-7051-8627-9d6e4952505c" style="opacity:0" class="div-block-52">
+          <div class="promotionbanner">
+            <h1 class="promotiontitle">{{entry.title}}</h1>
+            <div class="rich-text-block w-richtext">
+              {{entry.body}}
+            </div>
+          </div><img src="{% static 'images/1-19.png' %}" loading="lazy" srcset="{% static 'images/1-19-p-500.png' %} 500w, {% static 'images/1-19-p-800.png' %} 800w, {% static 'images/1-19.png' %} 1080w" sizes="(max-width: 767px) 100vw, 20vw" alt="" class="triangleimg">
         </div>
       {% endif %}
 

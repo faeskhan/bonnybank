@@ -3,6 +3,8 @@ from django.shortcuts import render, redirect
 from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 from django.db.models import Q
 from django.contrib import messages
+from django.core.mail import send_mail
+from . forms import ContactForm
 
 def index(request):
     review = Review.objects.all()
@@ -33,7 +35,29 @@ def event_details(request, pk):
     return render(request, 'event_details.html', context)
 
 def contact(request):
-    return render(request, 'contact.html')
+    # form = ContactForm()
+
+    if request.method == 'POST':
+        
+        # form = ContactForm(request.POST)
+        if form.is_valid():
+            subject = "Website Inquiry" 
+            body = {
+                'first_name': form.cleaned_data['first_name'], 
+                'last_name': form.cleaned_data['last_name'], 
+                'email': form.cleaned_data['email_address'], 
+                'message':form.cleaned_data['message'], 
+            }
+            message = "\n".join(body.values())
+
+            try:
+                send_mail(subject, message, 'admin@example.com', ['admin@example.com']) 
+            except BadHeaderError:
+                return HttpResponse('Invalid header found.')
+            return redirect (":index")
+
+    context = {'form': form}
+    return render(request, 'contact.html', context)
 
 def news (request):
     media = News.objects.order_by('-date').all()
