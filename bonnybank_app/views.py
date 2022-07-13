@@ -1,10 +1,9 @@
-from . models import Review, News, Event, Promotions
+from . models import Review, News, Event, Promotions, Contact
 from django.shortcuts import render, redirect
 from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 from django.db.models import Q
 from django.contrib import messages
 from django.core.mail import send_mail
-from . forms import ContactForm
 
 def index(request):
     review = Review.objects.all()
@@ -35,29 +34,42 @@ def event_details(request, pk):
     return render(request, 'event_details.html', context)
 
 def contact(request):
-    # form = ContactForm()
 
     if request.method == 'POST':
+        first_name = request.POST['first_name']
+        last_name = request.POST['last_name']
+        email = request.POST['email']
+        radio_button = request.POST['radio']
+        day = request.POST['Day']
+        month = request.POST['Month']
+        year = request.POST['Year']
+        nights = request.POST['of-Nights']
+        message = request.POST['Message']
+
+        # send_mail(subject, message, from_email, recipient_list)
+
+        if radio_button == 'Booking':
+            checkin = month +' '+ day +', '+ year
+            checkout = nights + ' nights after checkin date'
+            contact_obj = Contact(first_name = first_name, last_name=last_name, email=email, checkin=checkin, checkout=checkout, message=message)
+            contact_obj.save()
+
         
-        # form = ContactForm(request.POST)
-        if form.is_valid():
-            subject = "Website Inquiry" 
-            body = {
-                'first_name': form.cleaned_data['first_name'], 
-                'last_name': form.cleaned_data['last_name'], 
-                'email': form.cleaned_data['email_address'], 
-                'message':form.cleaned_data['message'], 
-            }
-            message = "\n".join(body.values())
+        # print(checkin)
+        # print(first_name)
+        # print(last_name)
+        # print(email)
+        # print(radio_button)
+        # print(day)
+        # print(month) 
+        # print(year)
+        # print(nights)
+        # print(message)
+        return redirect('index')
 
-            try:
-                send_mail(subject, message, 'admin@example.com', ['admin@example.com']) 
-            except BadHeaderError:
-                return HttpResponse('Invalid header found.')
-            return redirect (":index")
 
-    context = {'form': form}
-    return render(request, 'contact.html', context)
+
+    return render(request, 'contact.html')
 
 def news (request):
     media = News.objects.order_by('-date').all()

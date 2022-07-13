@@ -78,12 +78,12 @@ class Contact(models.Model):
 
 
     first_name = models.CharField(max_length=100)
-    last_name = models.CharField(max_length=100)
+    last_name = models.CharField(max_length=100, null=True)
     email  = models.EmailField(max_length=200)
     room = models.CharField(max_length=12, choices=ROOM_CHOICES, blank=True, null=True)
-    checkin = models.DateTimeField(blank=True, null=True)
-    checkout = models.DateTimeField(blank=True, null=True)
-    message = models.TextField(max_length=200, blank=True, null=True)
+    checkin = models.CharField(max_length=150, blank=True, null=True)
+    checkout = models.CharField(max_length=30, blank=True, null=True)
+    message = models.TextField(max_length=300, blank=True, null=True)
 
     def __str__(self):
-        return self.title
+        return self.first_name
