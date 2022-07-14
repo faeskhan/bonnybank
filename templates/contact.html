@@ -26,8 +26,20 @@
     <h1 class="heading-16">Contact Us</h1>
   </div>
   <div class="wf-section"><img src="{% static 'images/Vines-4.png' %}" loading="lazy" alt="" class="image-51"><img src="{% static 'images/Vines-5.png' %}" loading="lazy" alt="" class="image-54"><img src="{% static 'images/Bonnybank-logo-2---Copy.png' %}" loading="lazy" alt="" class="image-52"><img src="{% static 'images/Vines-3.png' %}" loading="lazy" alt="" class="image-57">
+    <br>
+    <div class="div-block-54">
+    {% for mssg in messages %}
+         <div class="alert alert-warning alert-dismissible fade show" role="alert" style="text-align: center;
+          background-color: #8d8d79; color: #ffffff;border-radius: 5px;">
+            <strong>{{mssg}}</strong>
+
+          </div>
+    {% endfor %}
+    </div>
     <div data-w-id="21bdacbb-400a-d801-4d76-5c223adac724" style="opacity:0" class="contact-card w-container">
+
       <div class="div-block-54">
+
         <h1 class="heading-21">Contact Us</h1>
       </div>
 
@@ -43,7 +55,8 @@
                 <div class="w-form-formradioinput w-form-formradioinput--inputType-custom radio-button w-radio-input"></div><input type="radio" data-name="Radio" id="radio" name="radio" value="Booking" style="opacity:0;position:absolute;z-index:-1" required=""><span class="radio-button-label w-form-label" for="radio">Booking</span>
               </label><label class="radio-button-field-2 w-radio">
                 <div class="w-form-formradioinput w-form-formradioinput--inputType-custom radio-button w-radio-input"></div><input type="radio" data-name="Radio 2" id="radio" name="radio" value="Inquiry" style="opacity:0;position:absolute;z-index:-1" required=""><span class="w-form-label" for="radio-2">Inquiry</span>
-              </label></div>
+              </label>
+            </div>
           </div><label class="field-label">Arrvial Date</label>
           <div class="div-block-56"><input type="number" class="text-field w-input" maxlength="256" name="Day" data-name="Day" placeholder="Date" id="Day" required=""><input type="text" class="text-field-4 w-input" maxlength="256" name="Month" data-name="Month" placeholder="Month" id="Month" required=""><input type="number" class="text-field-4 w-input" maxlength="256" name="Year" data-name="Year" placeholder="Year" id="Year" required=""><input type="number" class="text-field-2 w-input" maxlength="256" name="of-Nights" data-name="# of Nights" placeholder="# of Nights" id="of-Nights" required=""></div><label for="Message">Message *</label><textarea placeholder="How can we help?" maxlength="5000" id="Message" name="Message" data-name="field" required="" class="textarea w-input"></textarea>
           <div class="div-block-58"><input type="submit" value="SUBMIT" data-wait="Please wait..." class="submit-button w-button"></div>
@@ -70,6 +83,7 @@
       </div>
     </div>
   </div>
+  
   <div class="w-container">
     <div class="section-15 wf-section">
       <div class="div-block-57">

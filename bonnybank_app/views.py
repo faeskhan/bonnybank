@@ -54,7 +54,7 @@ def contact(request):
 
         if radio_button == 'Booking':
             contact_obj = Contact(first_name = first_name, last_name=last_name, email=email, checkin=checkin, checkout=checkout, message=message)
-            contact_obj.save() 
+            contact_obj.save()
 
         subject = first_name + ' ' + last_name + ': ' + radio_button
         message = 'Check-In: ' + checkin + '\n' + 'Check-Out: ' + checkout + '\n' + 'Their Message: '+ '\n'  + message
@@ -67,7 +67,9 @@ def contact(request):
             fail_silently=False,
             )
 
-        return redirect('index')
+        messages.add_message(request, messages.SUCCESS,'Your inquiry has been submitted successfully. We will get back to you shortly.')
+
+        return redirect('contact')
 
 
 
