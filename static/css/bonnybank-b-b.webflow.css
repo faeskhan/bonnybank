@@ -241,8 +241,9 @@ p {
 
 .navlogo {
   height: 60px;
-  -o-object-fit: contain;
-  object-fit: contain;
+  min-width: 100px;
+  -o-object-fit: cover;
+  object-fit: cover;
 }
 
 .hero-text {
@@ -365,6 +366,15 @@ p {
 
 .bold-text {
   font-size: 26px;
+}
+
+.image-6 {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  -o-object-fit: cover;
+  object-fit: cover;
 }
 
 .heading {
@@ -3010,7 +3020,12 @@ p {
 }
 
 .image-17-copy {
-  width: 150px;
+  width: 300px;
+  height: 130px;
+  -o-object-fit: cover;
+  object-fit: cover;
+  -o-object-position: 50% 40%;
+  object-position: 50% 40%;
 }
 
 .heading-15 {
