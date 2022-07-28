@@ -1541,6 +1541,7 @@ p {
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
+  color: #fff;
 }
 
 .mobile-logo {
@@ -4630,6 +4631,19 @@ p {
   text-align: right;
 }
 
+@media screen and (min-width: 1920px) {
+  .div-block-28 {
+    left: 5%;
+  }
+
+  .div-block-30 {
+    width: 80%;
+    max-width: none;
+    -o-object-fit: fill;
+    object-fit: fill;
+  }
+}
+
 @media screen and (max-width: 991px) {
   .footer-information {
     -webkit-box-orient: horizontal;
@@ -5017,8 +5031,8 @@ p {
   .image-29 {
     max-width: 100%;
     min-width: 100%;
-    -o-object-fit: contain;
-    object-fit: contain;
+    -o-object-fit: cover;
+    object-fit: cover;
     -o-object-position: 100% 100%;
     object-position: 100% 100%;
   }
@@ -5105,7 +5119,7 @@ p {
 
   .heading-12 {
     margin-top: 26px;
-    font-size: 70px;
+    font-size: 60px;
     line-height: 80px;
   }
 
@@ -5627,19 +5641,21 @@ p {
 
   .div-block-28 {
     min-height: 200px;
-    padding-top: 13px;
-    padding-left: 15px;
   }
 
   .heading-12 {
     margin-top: 15px;
-    font-size: 50px;
+    margin-bottom: 0px;
+    font-size: 40px;
     line-height: 50px;
   }
 
   .div-block-29 {
-    padding-top: 11px;
+    width: 75%;
+    padding-top: 0px;
     padding-bottom: 11px;
+    font-size: 14px;
+    line-height: 18px;
   }
 
   .event-banner-2 {
@@ -6003,6 +6019,17 @@ p {
 
   .radio-button-label {
     margin-right: 20px;
+  }
+
+  .roomcontainer {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
   }
 }
 
@@ -6558,19 +6585,20 @@ p {
     margin-right: 0px;
     margin-left: 9px;
     padding-top: 7px;
-    padding-left: 9px;
   }
 
   .heading-12 {
-    margin-top: 3px;
-    margin-bottom: 7px;
-    font-size: 27px;
+    margin-top: 8px;
+    margin-bottom: 0px;
+    font-size: 20px;
     line-height: 30px;
   }
 
   .div-block-29 {
+    width: 184px;
     padding-top: 0px;
     padding-bottom: 0px;
+    line-height: 16px;
   }
 
   .image-39 {
@@ -7087,6 +7115,10 @@ p {
 
   .text-block-31 {
     text-align: center;
+  }
+
+  .text-block-38 {
+    line-height: 18px;
   }
 }
 
