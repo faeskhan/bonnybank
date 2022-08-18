@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'bonnybank_app.apps.BonnybankAppConfig',
+    'ckeditor', 
 ]
 
 MIDDLEWARE = [

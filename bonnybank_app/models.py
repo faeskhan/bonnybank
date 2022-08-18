@@ -1,4 +1,5 @@
 from django.db import models
+from ckeditor.fields import RichTextField
 import uuid
 
 class Review(models.Model):
@@ -16,7 +17,7 @@ class Event(models.Model):
     start = models.DateField(blank=True, null=True)
     end = models.DateField(blank=True, null=True)
     display_image = models.ImageField(upload_to='static/images/event')
-    body = models.TextField(max_length=1000)
+    body = models.TextField(max_length=3000)
     id = models.UUIDField(default=uuid.uuid4, unique=True, primary_key=True, editable=False)
     
 
@@ -38,7 +39,9 @@ class News(models.Model):
 
 class Promotions(models.Model):
     title = models.CharField(max_length=200)
-    body = models.TextField(max_length=500)
+    start = models.DateField(blank=True, null=True)
+    end = models.DateField(blank=True, null=True)
+    body = RichTextField(max_length=500)
 
 
     def __str__(self):

@@ -38,7 +38,7 @@
           <div class="promotionbanner-copy">
             <h1 class="promotiontitle-copy"><strong class="bold-text-7">{{entry.title}}</strong></h1>
             <div class="rich-text-block-2 w-richtext">
-              <p>{{entry.body}}</p>
+              <p>{{entry.body|safe}}</p>
             </div>
           </div>
         </div>
@@ -48,8 +48,9 @@
         <div data-w-id="0c886d10-3601-7051-8627-9d6e4952505c" style="opacity:0" class="div-block-52">
           <div class="promotionbanner">
             <h1 class="promotiontitle"><strong>{{entry.title}}</strong></h1>
+            <p class="paragraph-4">{{entry.start}} – {{entry.end}}</p>
             <div class="rich-text-block w-richtext">
-              <p>{{entry.body}}</p>
+              <p>{{entry.body|safe}}</p>
             </div>
           </div><img src="{% static 'images/1-19.png' %}" loading="lazy" srcset="{% static 'images/1-19-p-500.png' %} 500w, {% static 'images/1-19-p-800.png' %} 800w, {% static 'images/1-19.png' %} 1080w" sizes="(max-width: 479px) 100vw, (max-width: 767px) 153.49609375px, 20vw" alt="" class="triangleimg">
         </div>
@@ -64,4 +65,4 @@
   {% include 'footer.html' %}
 
 </body>
-</html>
+</html> 
